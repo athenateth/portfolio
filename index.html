@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Athena | Web3 Content Creator & Gaming Narrative Strategist</title>
+<meta name="description" content="Athena is a Web3 content creator, space host, and narrative strategist specializing in blockchain gaming, NFTs, and AI ecosystems. Worked with Immutable, YGG, Solana Gaming, and more.">
+<meta name="keywords" content="Web3 content creator, blockchain gaming, NFT creator, GameFi, Immutable creator, crypto content, Web3 narrative, space host, AMA host, community manager">
+<meta name="author" content="Athena">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Athena | Web3 Content Creator & Gaming Narrative Strategist">
+<meta property="og:description" content="Turning complex Web3 systems into stories that actually land. 4 years deep in blockchain gaming, NFTs, and AI.">
+<meta property="og:image" content="1.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@Aathena_eth">
+<meta name="twitter:title" content="Athena | Web3 Content Creator">
+<meta name="twitter:description" content="Turning complex Web3 systems into stories that actually land.">
+<meta name="twitter:image" content="1.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Athena",
+  "alternateName": "Aathena_eth",
+  "url": "https://aathena.eth",
+  "sameAs": ["https://x.com/Aathena_eth","https://linktr.ee/aathena_eth"],
+  "jobTitle": "Web3 Content Creator & Narrative Strategist",
+  "description": "Web3 content creator specializing in blockchain gaming, NFTs, GameFi, and AI ecosystems.",
+  "knowsAbout": ["Web3","Blockchain Gaming","NFTs","GameFi","Content Creation","Community Management","Space Hosting"]
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #9b5de5;
+    --purple-light: #c77dff;
+    --purple-dim: #5a189a;
+    --cyan: #00f5ff;
+    --bg: #060610;
+    --bg2: #0a0a1a;
+    --bg3: #0d0d20;
+    --glass: rgba(155,93,229,0.06);
+    --glass-border: rgba(155,93,229,0.16);
+    --text: #e0e0ff;
+    --text-muted: #6a6a90;
+    --glow-purple: 0 0 20px rgba(155,93,229,0.4), 0 0 60px rgba(155,93,229,0.12);
+    --glow-cyan: 0 0 20px rgba(0,245,255,0.35), 0 0 50px rgba(0,245,255,0.1);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* CURSOR */
+  .cursor {
+    width: 8px; height: 8px;
+    background: var(--purple-light); border-radius: 50%;
+    position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;
+    box-shadow: 0 0 8px var(--purple-light);
+    transform: translate(-50%, -50%);
+  }
+  .cursor-ring {
+    width: 32px; height: 32px;
+    border: 1px solid rgba(155,93,229,0.5); border-radius: 50%;
+    position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9998;
+    transition: width 0.2s, height 0.2s, border-color 0.2s;
+    transform: translate(-50%, -50%);
+  }
+  .cursor-ring.hover { width: 50px; height: 50px; border-color: var(--cyan); }
+
+  /* PARTICLES */
+  #particles-canvas {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0; opacity: 0.3;
+  }
+
+  /* SCANLINES */
+  body::after {
+    content: ''; position: fixed; inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 4px);
+    pointer-events: none; z-index: 1;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 0 60px; height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(6,6,16,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(155,93,229,0.1);
+  }
+  .nav-logo {
+    font-family: 'Orbitron', monospace; font-size: 0.95rem; font-weight: 900;
+    letter-spacing: 0.3em; color: var(--purple-light);
+    text-shadow: var(--glow-purple); text-decoration: none;
+  }
+  .nav-logo span { color: var(--cyan); }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    font-family: 'Rajdhani', sans-serif; font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--text-muted); text-decoration: none; transition: color 0.25s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 1px; background: var(--cyan); transition: width 0.25s;
+  }
+  .nav-links a:hover { color: var(--cyan); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    font-family: 'Orbitron', monospace; font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; padding: 9px 20px;
+    background: transparent; border: 1px solid var(--purple);
+    color: var(--purple-light); text-decoration: none; transition: all 0.25s;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+  .nav-cta:hover { background: var(--purple); color: #fff; box-shadow: var(--glow-purple); }
+  .nav-mobile-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .nav-mobile-toggle span { width: 22px; height: 2px; background: var(--purple-light); }
+
+  /* LOADER */
+  #loader {
+    position: fixed; inset: 0; z-index: 9000; background: var(--bg);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+  }
+  #loader.hidden { opacity: 0; visibility: hidden; }
+  .loader-name {
+    font-family: 'Orbitron', monospace; font-size: 2rem; font-weight: 900;
+    letter-spacing: 0.5em; color: var(--purple-light); text-shadow: var(--glow-purple);
+  }
+  .loader-bar-wrap { width: 240px; height: 2px; background: rgba(155,93,229,0.1); }
+  .loader-bar {
+    height: 100%; background: linear-gradient(90deg, var(--purple), var(--cyan));
+    animation: loadBar 1.6s ease forwards;
+  }
+  @keyframes loadBar { from { width: 0; } to { width: 100%; } }
+  .loader-text {
+    font-family: 'Space Mono', monospace; font-size: 0.6rem;
+    color: var(--text-muted); letter-spacing: 0.2em; animation: blink 0.9s infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+  /* =====================
+     HERO SECTION
+     Two columns: text left, image right
+     Image blends seamlessly — no box, no background
+  ===================== */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    align-items: center;
+    position: relative; z-index: 2;
+    padding: 64px 60px 0;
+    overflow: hidden;
+    gap: 0;
+  }
+
+  /* Animated grid background */
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(155,93,229,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(155,93,229,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridDrift 30s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes gridDrift { from{transform:translateY(0)} to{transform:translateY(60px)} }
+
+  /* Radial glow behind text */
+  .hero-glow {
+    position: absolute; left: -100px; top: 50%; transform: translateY(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(155,93,229,0.1) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  /* LEFT: text */
+  .hero-text { position: relative; z-index: 2; padding-right: 40px; }
+
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'Space Mono', monospace; font-size: 0.7rem;
+    color: var(--cyan); letter-spacing: 0.18em; text-transform: uppercase;
+    margin-bottom: 24px;
+    opacity: 0; animation: fadeUp 0.6s ease 0.3s forwards;
+  }
+  .hero-eyebrow::before { content:''; width:24px; height:1px; background:var(--cyan); }
+  .hero-dot { width:5px; height:5px; border-radius:50%; background:var(--cyan); animation:pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.7)} }
+
+  .hero-name {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(3.2rem, 6vw, 5.5rem); font-weight: 900;
+    line-height: 1; letter-spacing: -0.01em; color: #fff;
+    margin-bottom: 12px;
+    opacity: 0; animation: fadeUp 0.7s ease 0.5s forwards;
+  }
+  .hero-name .accent {
+    color: var(--purple-light);
+    text-shadow: 0 0 40px rgba(155,93,229,0.5);
+  }
+
+  .hero-roles {
+    font-family: 'Rajdhani', sans-serif; font-size: 1rem;
+    font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 28px;
+    opacity: 0; animation: fadeUp 0.7s ease 0.7s forwards;
+  }
+  .hero-roles span { color: var(--purple-light); margin: 0 6px; }
+
+  .hero-desc {
+    font-size: 1.05rem; line-height: 1.75;
+    color: rgba(224,224,255,0.6); max-width: 440px;
+    margin-bottom: 40px;
+    opacity: 0; animation: fadeUp 0.7s ease 0.9s forwards;
+  }
+
+  .hero-btns {
+    display: flex; gap: 14px;
+    opacity: 0; animation: fadeUp 0.7s ease 1.1s forwards;
+    margin-bottom: 52px;
+  }
+  .btn-fill {
+    font-family: 'Orbitron', monospace; font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; padding: 13px 30px;
+    background: var(--purple); color: #fff; text-decoration: none;
+    border: 1px solid var(--purple-light);
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    transition: box-shadow 0.3s, transform 0.2s;
+  }
+  .btn-fill:hover { box-shadow: var(--glow-purple); transform: translateY(-2px); }
+  .btn-outline {
+    font-family: 'Orbitron', monospace; font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; padding: 13px 30px;
+    background: transparent; color: var(--cyan); text-decoration: none;
+    border: 1px solid rgba(0,245,255,0.35);
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    transition: all 0.3s;
+  }
+  .btn-outline:hover { background: rgba(0,245,255,0.06); border-color: var(--cyan); box-shadow: var(--glow-cyan); transform: translateY(-2px); }
+
+  /* Stats row — fixed proper layout */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 0;
+    width: fit-content;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 28px;
+    opacity: 0; animation: fadeUp 0.7s ease 1.3s forwards;
+  }
+  .stat {
+    display: flex; flex-direction: column; gap: 4px;
+    padding-right: 36px;
+    border-right: 1px solid var(--glass-border);
+    margin-right: 36px;
+  }
+  .stat:last-child { padding-right: 0; border-right: none; margin-right: 0; }
+  .stat-num {
+    font-family: 'Orbitron', monospace;
+    font-size: 2.2rem; font-weight: 900; line-height: 1;
+    color: var(--purple-light);
+    text-shadow: 0 0 20px rgba(155,93,229,0.35);
+  }
+  .stat-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--text-muted); white-space: nowrap;
+  }
+
+  /* RIGHT: hero image — pure black bg blends with site bg, no box */
+  .hero-img-col {
+    position: relative; z-index: 2;
+    display: flex; align-items: flex-end; justify-content: center;
+    height: calc(100vh - 64px);
+    overflow: hidden;
+  }
+  /* Subtle glow underneath character feet */
+  .hero-img-col::before {
+    content: '';
+    position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 260px; height: 200px;
+    background: radial-gradient(ellipse, rgba(155,93,229,0.22) 0%, transparent 70%);
+    filter: blur(24px); pointer-events: none; z-index: 0;
+  }
+  .hero-img-col img {
+    /* mix-blend-mode: lighten removes dark backgrounds on images with black bg */
+    mix-blend-mode: lighten;
+    width: 100%;
+    max-height: 92%;
+    object-fit: contain;
+    object-position: bottom center;
+    position: relative; z-index: 1;
+    filter: drop-shadow(0 0 40px rgba(155,93,229,0.25));
+    transition: filter 0.4s;
+  }
+  .hero-img-col:hover img { filter: drop-shadow(0 0 60px rgba(155,93,229,0.45)); }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+  /* SECTION SHARED */
+  section { position: relative; z-index: 2; }
+  .section-wrap { max-width: 1160px; margin: 0 auto; padding: 110px 60px; }
+  .section-tag {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'Space Mono', monospace; font-size: 0.65rem;
+    color: var(--cyan); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 12px;
+  }
+  .section-tag::before { content:'//'; color:var(--purple-light); opacity:0.55; }
+  .section-heading {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(1.8rem, 3.2vw, 2.5rem); font-weight: 900;
+    color: #fff; margin-bottom: 56px; line-height: 1.1;
+  }
+  .section-heading em { font-style: normal; color: var(--purple-light); }
+
+  /* =====================
+     ABOUT SECTION
+     Clean two-column: image left, content right
+  ===================== */
+  #about { background: var(--bg2); }
+  .about-layout {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  /* Image column */
+  .about-img-col { position: relative; }
+  .about-img-frame {
+    position: relative;
+    border: 1px solid var(--glass-border);
+    overflow: hidden;
+  }
+  /* Corner accents on the frame */
+  .about-img-frame::before, .about-img-frame::after {
+    content: ''; position: absolute; width: 20px; height: 20px; z-index: 2;
+  }
+  .about-img-frame::before { top: -1px; left: -1px; border-top: 2px solid var(--cyan); border-left: 2px solid var(--cyan); }
+  .about-img-frame::after { bottom: -1px; right: -1px; border-bottom: 2px solid var(--purple-light); border-right: 2px solid var(--purple-light); }
+  .about-img-frame img {
+    width: 100%; display: block;
+    /* blend mode removes the black bg from character art images */
+    mix-blend-mode: lighten;
+    filter: drop-shadow(0 0 20px rgba(155,93,229,0.2));
+  }
+
+  /* Content column */
+  .about-content { display: flex; flex-direction: column; gap: 0; }
+  .about-intro {
+    font-size: 1rem; line-height: 1.8;
+    color: rgba(224,224,255,0.72); margin-bottom: 20px;
+  }
+  .about-intro strong { color: var(--purple-light); font-weight: 700; }
+  .about-quote {
+    border-left: 2px solid var(--purple);
+    padding: 12px 20px; margin: 24px 0 28px;
+    background: rgba(155,93,229,0.04);
+  }
+  .about-quote p {
+    font-size: 1rem; font-style: italic;
+    color: rgba(224,224,255,0.85); line-height: 1.7;
+  }
+
+  /* Skills grid inside about */
+  .skills-block { margin-top: 8px; }
+  .skills-row { margin-bottom: 18px; }
+  .skill-label {
+    font-family: 'Space Mono', monospace; font-size: 0.6rem;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--cyan); margin-bottom: 10px;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .skill-pill {
+    font-family: 'Rajdhani', sans-serif; font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.06em; padding: 5px 14px;
+    background: rgba(155,93,229,0.08);
+    border: 1px solid rgba(155,93,229,0.18);
+    color: var(--text); transition: all 0.25s;
+    clip-path: polygon(5px 0%, 100% 0%, calc(100% - 5px) 100%, 0% 100%);
+  }
+  .skill-pill:hover { background:rgba(155,93,229,0.18); border-color:var(--purple-light); color:var(--purple-light); }
+  .skill-pill.c { border-color:rgba(0,245,255,0.18); }
+  .skill-pill.c:hover { background:rgba(0,245,255,0.08); border-color:var(--cyan); color:var(--cyan); }
+
+  /* =====================
+     EXPERIENCE TIMELINE
+  ===================== */
+  #experience { background: var(--bg); }
+  .timeline { position: relative; }
+  .timeline::before {
+    content: ''; position: absolute; left: 150px; top: 0; bottom: 0; width: 1px;
+    background: linear-gradient(180deg, transparent, var(--purple) 15%, var(--purple) 85%, transparent);
+  }
+  .tl-item {
+    display: grid; grid-template-columns: 150px 1fr;
+    gap: 40px; margin-bottom: 44px; position: relative;
+  }
+  .tl-item::before {
+    content: ''; position: absolute; left: 144px; top: 10px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--purple-light); border: 2px solid var(--bg);
+    box-shadow: 0 0 12px rgba(155,93,229,0.6); z-index: 1;
+  }
+  .tl-date {
+    font-family: 'Space Mono', monospace; font-size: 0.62rem;
+    color: var(--purple-light); letter-spacing: 0.06em;
+    text-align: right; padding-top: 8px; opacity: 0.7; line-height: 1.4;
+  }
+  .tl-card {
+    background: var(--glass); border: 1px solid var(--glass-border);
+    padding: 22px 26px; position: relative;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .tl-card::before {
+    content: ''; position: absolute; left: -8px; top: 14px;
+    border-right: 8px solid var(--glass-border);
+    border-top: 6px solid transparent; border-bottom: 6px solid transparent;
+  }
+  .tl-card:hover { border-color: var(--purple); transform: translateX(4px); }
+  .tl-org {
+    font-family: 'Orbitron', monospace; font-size: 0.78rem; font-weight: 700;
+    color: var(--purple-light); letter-spacing: 0.08em; margin-bottom: 2px;
+  }
+  .tl-role { font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+  .tl-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; }
+  .tl-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+  .tl-tag {
+    font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 3px 9px; background: rgba(155,93,229,0.1);
+    color: var(--purple-light); border: 1px solid rgba(155,93,229,0.22); border-radius: 2px;
+  }
+  .tl-tag.c { background:rgba(0,245,255,0.07); color:var(--cyan); border-color:rgba(0,245,255,0.22); }
+
+  /* =====================
+     WORK SECTION
+  ===================== */
+  #work { background: var(--bg2); }
+  .work-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+  .work-card {
+    background: var(--glass); border: 1px solid var(--glass-border);
+    text-decoration: none; color: inherit;
+    position: relative; overflow: hidden; display: block;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  .work-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--purple-light), transparent);
+    transform: scaleX(0); transform-origin: left; transition: transform 0.35s;
+  }
+  .work-card:hover { border-color: var(--purple); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.3), 0 0 20px rgba(155,93,229,0.08); }
+  .work-card:hover::before { transform: scaleX(1); }
+  .work-card-body { padding: 28px; }
+  .work-num { font-family:'Orbitron',monospace; font-size:0.58rem; font-weight:700; letter-spacing:0.3em; color:var(--purple-light); opacity:0.4; margin-bottom:14px; }
+  .work-title { font-family:'Orbitron',monospace; font-size:0.85rem; font-weight:700; color:#fff; margin-bottom:8px; line-height:1.3; }
+  .work-desc { font-size:0.86rem; color:var(--text-muted); line-height:1.65; margin-bottom:18px; }
+  .work-pills { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:16px; }
+  .work-pill { font-size:0.6rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; padding:3px 9px; background:rgba(0,245,255,0.06); color:var(--cyan); border:1px solid rgba(0,245,255,0.18); border-radius:2px; }
+  .work-pill.p { background:rgba(155,93,229,0.08); color:var(--purple-light); border-color:rgba(155,93,229,0.25); }
+  .work-cta { display:inline-flex; align-items:center; gap:6px; font-family:'Space Mono',monospace; font-size:0.65rem; color:var(--purple-light); text-decoration:none; transition:gap 0.25s; }
+  .work-card:hover .work-cta { gap:12px; }
+  .work-cta::after { content:'→'; }
+  .work-glow { position:absolute; bottom:-50px; right:-50px; width:140px; height:140px; border-radius:50%; background:radial-gradient(circle,rgba(155,93,229,0.08) 0%,transparent 70%); transition:all 0.35s; pointer-events:none; }
+  .work-card:hover .work-glow { background:radial-gradient(circle,rgba(155,93,229,0.2) 0%,transparent 70%); bottom:-30px; right:-30px; }
+
+  /* =====================
+     PARTNERS SECTION
+     Uses actual logo images — filenames match exactly
+  ===================== */
+  #partners { background: var(--bg3); }
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+  }
+  .partner-card {
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    background: var(--glass); border: 1px solid var(--glass-border);
+    padding: 24px 12px;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .partner-card:hover { border-color: var(--purple); transform: translateY(-4px); }
+  .partner-img-wrap {
+    width: 54px; height: 54px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 10px; overflow: hidden;
+    background: rgba(255,255,255,0.04);
+  }
+  .partner-img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: contain; border-radius: 8px;
+    filter: saturate(0.8);
+    transition: filter 0.3s;
+  }
+  .partner-card:hover .partner-img-wrap img { filter: saturate(1.2); }
+  .partner-name-label {
+    font-family: 'Space Mono', monospace; font-size: 0.55rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-muted); text-align: center; line-height: 1.4;
+  }
+  .partner-role-label {
+    font-size: 0.62rem; font-weight: 600;
+    color: var(--purple-light); text-align: center;
+  }
+
+  /* =====================
+     SERVICES SECTION
+  ===================== */
+  #services { background: var(--bg2); }
+  .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+  .svc-card {
+    background: var(--glass); border: 1px solid var(--glass-border);
+    padding: 28px 22px; position: relative; overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .svc-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--purple), var(--cyan));
+    transform: scaleX(0); transform-origin: left; transition: transform 0.35s;
+  }
+  .svc-card:hover { border-color: rgba(155,93,229,0.35); transform: translateY(-3px); }
+  .svc-card:hover::after { transform: scaleX(1); }
+  .svc-icon { font-size: 1.5rem; margin-bottom: 14px; display: block; }
+  .svc-title { font-family:'Orbitron',monospace; font-size:0.75rem; font-weight:700; letter-spacing:0.08em; color:#fff; margin-bottom:8px; }
+  .svc-desc { font-size:0.86rem; color:var(--text-muted); line-height:1.65; }
+
+  /* =====================
+     CONTACT SECTION
+  ===================== */
+  #contact { background: var(--bg); }
+  .contact-center { text-align: center; max-width: 560px; margin: 0 auto; }
+  .contact-center .section-tag { justify-content: center; }
+  .contact-center .section-heading { text-align: center; }
+  .contact-desc { font-size: 0.98rem; color: rgba(224,224,255,0.62); line-height: 1.8; margin-bottom: 40px; }
+  .btn-book {
+    font-family: 'Orbitron', monospace; font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase; padding: 17px 48px;
+    background: linear-gradient(135deg, var(--purple), var(--purple-dim));
+    color: #fff; text-decoration: none;
+    border: 1px solid var(--purple-light);
+    clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+    transition: box-shadow 0.3s, transform 0.2s;
+    display: inline-block; margin-bottom: 12px;
+  }
+  .btn-book:hover { box-shadow: var(--glow-purple), 0 14px 40px rgba(155,93,229,0.22); transform: translateY(-2px); }
+  .contact-note { font-family:'Space Mono',monospace; font-size:0.62rem; color:var(--text-muted); letter-spacing:0.05em; display:block; margin-bottom:40px; }
+  .socials { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
+  .social-btn {
+    display:flex; align-items:center; gap:8px; font-family:'Space Mono',monospace;
+    font-size:0.65rem; letter-spacing:0.08em; color:var(--text-muted); text-decoration:none;
+    padding:10px 18px; background:var(--glass); border:1px solid var(--glass-border);
+    transition:all 0.25s;
+    clip-path:polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);
+  }
+  .social-btn:hover { color:var(--purple-light); border-color:var(--purple); }
+  .social-btn.x:hover { color:var(--cyan); border-color:var(--cyan); }
+
+  /* FOOTER */
+  footer {
+    position: relative; z-index: 2;
+    border-top: 1px solid var(--glass-border);
+    padding: 26px 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--bg);
+  }
+  .footer-logo { font-family:'Orbitron',monospace; font-size:0.78rem; font-weight:900; letter-spacing:0.3em; color:var(--purple-light); opacity:0.55; }
+  .footer-copy { font-family:'Space Mono',monospace; font-size:0.6rem; color:var(--text-muted); }
+
+  /* REVEAL ANIMATION */
+  .reveal { opacity:0; transform:translateY(32px); transition:opacity 0.65s ease, transform 0.65s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+  .d1{transition-delay:0.1s} .d2{transition-delay:0.2s} .d3{transition-delay:0.3s}
+  .d4{transition-delay:0.4s} .d5{transition-delay:0.5s}
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    #hero { grid-template-columns: 1fr; padding: 80px 24px 0; min-height: auto; }
+    .hero-img-col { height: 320px; order: -1; }
+    .hero-text { padding-right: 0; padding-bottom: 40px; }
+    .about-layout { grid-template-columns: 1fr; gap: 40px; }
+    .about-img-col { max-width: 320px; margin: 0 auto; }
+    .work-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: repeat(2,1fr); }
+    .partners-grid { grid-template-columns: repeat(3,1fr); }
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .nav-mobile-toggle { display: flex; }
+    .section-wrap { padding: 80px 24px; }
+    footer { padding: 24px; flex-direction: column; gap: 10px; text-align: center; }
+    .timeline::before { left: 0; }
+    .tl-item { grid-template-columns: 1fr; gap: 10px; }
+    .tl-item::before { left: -6px; }
+    .tl-date { text-align: left; }
+  }
+  @media (max-width: 560px) {
+    .hero-stats { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .stat { padding-right: 0; border-right: none; margin-right: 0; }
+    .services-grid { grid-template-columns: 1fr; }
+    .partners-grid { grid-template-columns: repeat(2,1fr); }
+    .hero-btns { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<div id="loader" aria-hidden="true">
+  <div class="loader-name">ATHENA</div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-text">INITIALIZING...</div>
+</div>
+
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+<!-- NAV -->
+<nav role="navigation" aria-label="Main navigation">
+  <a class="nav-logo" href="#hero">ATH<span>E</span>NA</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Journey</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="https://calendly.com/athenaeth" target="_blank" rel="noopener">Book a Call</a>
+  <div class="nav-mobile-toggle" onclick="toggleMenu(this)" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" aria-label="Introduction">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <!-- Left: text content -->
+  <div class="hero-text">
+    <div class="hero-eyebrow">
+      <div class="hero-dot" aria-hidden="true"></div>
+      Web3 Creator
+    </div>
+    <h1 class="hero-name">
+      <span class="accent">ATH</span>ENA
+    </h1>
+    <p class="hero-roles">
+      Content <span>·</span> Space Host <span>·</span> Community
+    </p>
+    <p class="hero-desc">
+      I make Web3 make sense. 4 years deep in blockchain gaming, NFTs, and AI — turning complex ecosystems into stories people actually care about.
+    </p>
+    <div class="hero-btns">
+      <a class="btn-fill" href="#work">View My Work</a>
+      <a class="btn-outline" href="https://calendly.com/athenaeth" target="_blank" rel="noopener">Book a Call</a>
+    </div>
+
+    <!-- Stats: properly separated with vertical dividers -->
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">4+</span>
+        <span class="stat-label">Years in Web3</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">6+</span>
+        <span class="stat-label">Projects</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">41K+</span>
+        <span class="stat-label">Weekly Impressions</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right: character image — mix-blend-mode:lighten removes black bg seamlessly -->
+  <div class="hero-img-col">
+    <img
+      src="1.png"
+      alt="Athena — Web3 creator avatar, anime character art"
+      loading="eager"
+      width="480"
+    >
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" aria-label="About Athena">
+  <div class="section-wrap">
+    <div class="section-tag">About Me</div>
+    <h2 class="section-heading">I Rarely <em>Share.</em><br>But Here We Are.</h2>
+    <div class="about-layout">
+
+      <!-- Image left -->
+      <div class="about-img-col reveal">
+        <div class="about-img-frame">
+          <img
+            src="herso_section.png"
+            alt="Athena creator character — standing pose with bomber jacket"
+            loading="lazy"
+            width="340"
+          >
+        </div>
+      </div>
+
+      <!-- Content right -->
+      <div class="about-content reveal d2">
+        <p class="about-intro">
+          Started in <strong>sales and marketing</strong>, learning how people think and what makes them trust something. That naturally pulled me into narrative strategy.
+        </p>
+        <p class="about-intro">
+          A blockchain firm changed everything. Web3 clicked instantly — the ownership model, the gaming ecosystems, communities built from scratch. I went all in.
+        </p>
+        <blockquote class="about-quote">
+          <p>"I partner with founders and builders to turn complex Web3 systems into stories that drive real adoption."</p>
+        </blockquote>
+        <p class="about-intro">
+          Today I work across <strong>content creation, space hosting, and community strategy</strong> — focused on one thing: making the gap between builders and players disappear.
+        </p>
+
+        <div class="skills-block">
+          <div class="skills-row">
+            <div class="skill-label">Content & Narrative</div>
+            <div class="skill-tags">
+              <span class="skill-pill">Thread Writing</span>
+              <span class="skill-pill">Space Hosting</span>
+              <span class="skill-pill">AMA Hosting</span>
+              <span class="skill-pill">Storytelling</span>
+            </div>
+          </div>
+          <div class="skills-row">
+            <div class="skill-label">Web3 & Gaming</div>
+            <div class="skill-tags">
+              <span class="skill-pill c">GameFi</span>
+              <span class="skill-pill c">NFTs</span>
+              <span class="skill-pill c">Layer 2</span>
+              <span class="skill-pill c">DeFi</span>
+              <span class="skill-pill c">AI Agents</span>
+            </div>
+          </div>
+          <div class="skills-row">
+            <div class="skill-label">Growth</div>
+            <div class="skill-tags">
+              <span class="skill-pill">Community Building</span>
+              <span class="skill-pill">Brand Strategy</span>
+              <span class="skill-pill">Social Media</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" aria-label="Career journey">
+  <div class="section-wrap">
+    <div class="section-tag">Journey</div>
+    <h2 class="section-heading">Then It <em>All Began.</em></h2>
+    <div class="timeline">
+
+      <div class="tl-item reveal">
+        <div class="tl-date">2025<br>Now</div>
+        <div class="tl-card">
+          <div class="tl-org">Immutable</div>
+          <div class="tl-role">Hero Creator</div>
+          <div class="tl-desc">Selected as a Hero Creator. Content on zkEVM, Immutable Passport, and game launches gets consistently recognized and reposted by the team, studios, and founders.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Content</span>
+            <span class="tl-tag c">Web3 Gaming</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal d1">
+        <div class="tl-date">2024<br>2025</div>
+        <div class="tl-card">
+          <div class="tl-org">YGG · Kronicles · Solana Gaming</div>
+          <div class="tl-role">Content Creator</div>
+          <div class="tl-desc">Ran content across three gaming platforms at once — game reviews, ecosystem explainers, and community posts that brought players closer to the projects.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Multi-Project</span>
+            <span class="tl-tag c">Gaming</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal d2">
+        <div class="tl-date">2023<br>2024</div>
+        <div class="tl-card">
+          <div class="tl-org">Seek Global Network</div>
+          <div class="tl-role">Community Moderator & AMA Host</div>
+          <div class="tl-desc">Managed community operations and hosted live AMAs — bridging the project team with a growing global audience.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Community</span>
+            <span class="tl-tag c">AMA Host</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal d3">
+        <div class="tl-date">2022<br>2023</div>
+        <div class="tl-card">
+          <div class="tl-org">Tokyo Beast · Independent</div>
+          <div class="tl-role">Web3 Creator — The Beginning</div>
+          <div class="tl-desc">Minted my first NFT on Immutable. That moment kicked off everything — a deep dive into GameFi that turned into a full creator career. All organic, no shortcuts.</div>
+          <div class="tl-tags">
+            <span class="tl-tag c">Early Web3</span>
+            <span class="tl-tag">Organic Growth</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" aria-label="Sample work">
+  <div class="section-wrap">
+    <div class="section-tag">Sample Work</div>
+    <h2 class="section-heading">Some of <em>My Work.</em></h2>
+    <div class="work-grid">
+
+      <a class="work-card reveal" href="https://x.com/Aathena_eth/status/2010383002795376799" target="_blank" rel="noopener">
+        <div class="work-card-body">
+          <div class="work-num">001</div>
+          <div class="work-title">Immutable Ecosystem Breakdown</div>
+          <div class="work-desc">zkEVM, Immutable Passport, and the quest rewards system — all made digestible for a gaming audience.</div>
+          <div class="work-pills"><span class="work-pill p">Immutable</span><span class="work-pill p">Thread</span></div>
+          <span class="work-cta">View on X</span>
+        </div>
+        <div class="work-glow" aria-hidden="true"></div>
+      </a>
+
+      <a class="work-card reveal d1" href="https://x.com/Aathena_eth/status/2000276660810395654" target="_blank" rel="noopener">
+        <div class="work-card-body">
+          <div class="work-num">002</div>
+          <div class="work-title">GameFi Narrative & Engagement</div>
+          <div class="work-desc">Turning gameplay loops and ecosystem updates into content that gets reposted by the founders themselves.</div>
+          <div class="work-pills"><span class="work-pill">GameFi</span><span class="work-pill p">Narrative</span></div>
+          <span class="work-cta">View on X</span>
+        </div>
+        <div class="work-glow" aria-hidden="true"></div>
+      </a>
+
+      <a class="work-card reveal d2" href="https://x.com/Aathena_eth/status/2008315944763093111" target="_blank" rel="noopener">
+        <div class="work-card-body">
+          <div class="work-num">003</div>
+          <div class="work-title">Web3 Game Review Series</div>
+          <div class="work-desc">Honest, detailed game reviews designed to convert curious readers into active community members.</div>
+          <div class="work-pills"><span class="work-pill p">Review</span><span class="work-pill">Web3 Gaming</span></div>
+          <span class="work-cta">View on X</span>
+        </div>
+        <div class="work-glow" aria-hidden="true"></div>
+      </a>
+
+      <a class="work-card reveal d3" href="https://x.com/Aathena_eth/status/2011699192578949385" target="_blank" rel="noopener">
+        <div class="work-card-body">
+          <div class="work-num">004</div>
+          <div class="work-title">Ecosystem Spotlight</div>
+          <div class="work-desc">Shining a light on the builders, studios, and projects defining the next wave of Web3 gaming.</div>
+          <div class="work-pills"><span class="work-pill p">Spotlight</span><span class="work-pill">Builder Story</span></div>
+          <span class="work-cta">View on X</span>
+        </div>
+        <div class="work-glow" aria-hidden="true"></div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners" aria-label="Brands worked with">
+  <div class="section-wrap">
+    <div class="section-tag">Worked With</div>
+    <h2 class="section-heading">Trusted by <em>Builders.</em></h2>
+    <div class="partners-grid">
+
+      <!-- Filenames match EXACTLY what was uploaded -->
+      <div class="partner-card reveal">
+        <div class="partner-img-wrap">
+          <img src="Immutable.png" alt="Immutable" loading="lazy" width="54" height="54">
+        </div>
+        <div class="partner-name-label">Immutable</div>
+        <div class="partner-role-label">Hero Creator</div>
+      </div>
+
+      <div class="partner-card reveal d1">
+        <div class="partner-img-wrap">
+          <img src="Ygg.jpg" alt="YGG Launchpad" loading="lazy" width="54" height="54">
+        </div>
+        <div class="partner-name-label">YGG Launchpad</div>
+        <div class="partner-role-label">Content Creator</div>
+      </div>
+
+      <div class="partner-card reveal d2">
+        <div class="partner-img-wrap">
+          <img src="kronicles.png" alt="Kronicles" loading="lazy" width="54" height="54">
+        </div>
+        <div class="partner-name-label">Kronicles</div>
+        <div class="partner-role-label">Content Creator</div>
+      </div>
+
+      <div class="partner-card reveal d3">
+        <div class="partner-img-wrap">
+          <img src="solana_gaming.jpg" alt="Solana Gaming" loading="lazy" width="54" height="54">
+        </div>
+        <div class="partner-name-label">Solana Gaming</div>
+        <div class="partner-role-label">Content Creator</div>
+      </div>
+
+      <div class="partner-card reveal d4">
+        <div class="partner-img-wrap">
+          <img src="seek_coin_global.png" alt="Seek Global Network" loading="lazy" width="54" height="54">
+        </div>
+        <div class="partner-name-label">Seek Global</div>
+        <div class="partner-role-label">Mod & AMA Host</div>
+      </div>
+
+      <div class="partner-card reveal d5">
+        <div class="partner-img-wrap">
+          <img src="tokyo_beast.png" alt="Tokyo Beast" loading="lazy" width="54" height="54">
+        </div>
+        <div class="partner-name-label">Tokyo Beast</div>
+        <div class="partner-role-label">Content Creator</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" aria-label="Services">
+  <div class="section-wrap">
+    <div class="section-tag">What I Offer</div>
+    <h2 class="section-heading">Services I <em>Provide.</em></h2>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <span class="svc-icon" aria-hidden="true">✦</span>
+        <div class="svc-title">Content Creation</div>
+        <div class="svc-desc">Threads, game reviews, and ecosystem breakdowns built to educate and move people.</div>
+      </div>
+      <div class="svc-card reveal d1">
+        <span class="svc-icon" aria-hidden="true">◈</span>
+        <div class="svc-title">Space / AMA Hosting</div>
+        <div class="svc-desc">Live Twitter Spaces and AMA facilitation for Web3 gaming and crypto audiences.</div>
+      </div>
+      <div class="svc-card reveal d2">
+        <span class="svc-icon" aria-hidden="true">⬡</span>
+        <div class="svc-title">Marketing Consultation</div>
+        <div class="svc-desc">Narrative framing and community positioning rooted in real market psychology.</div>
+      </div>
+      <div class="svc-card reveal d1">
+        <span class="svc-icon" aria-hidden="true">◉</span>
+        <div class="svc-title">Social Media Handling</div>
+        <div class="svc-desc">Full social management — content calendar to daily execution — built for organic growth.</div>
+      </div>
+      <div class="svc-card reveal d2">
+        <span class="svc-icon" aria-hidden="true">⬟</span>
+        <div class="svc-title">Community Management</div>
+        <div class="svc-desc">Culture building and moderation that turns early followers into long-term participants.</div>
+      </div>
+      <div class="svc-card reveal d3">
+        <span class="svc-icon" aria-hidden="true">✧</span>
+        <div class="svc-title">Ecosystem Storytelling</div>
+        <div class="svc-desc">Complex mechanics and builder journeys turned into narratives people actually want to read.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" aria-label="Contact">
+  <div class="section-wrap">
+    <div class="contact-center">
+      <div class="section-tag">Let's Work</div>
+      <h2 class="section-heading">You've Seen Enough.<br>Let's <em>Talk.</em></h2>
+      <p class="contact-desc">Got a project? Want to collaborate? Book a quick call and let's figure out if we're a good fit.</p>
+      <a class="btn-book reveal" href="https://calendly.com/athenaeth" target="_blank" rel="noopener">
+        Book a Quick Call
+      </a>
+      <span class="contact-note reveal d1">30-min discovery call via Calendly</span>
+      <div class="socials reveal d2">
+        <a class="social-btn x" href="https://x.com/Aathena_eth" target="_blank" rel="noopener">𝕏 @Aathena_eth</a>
+        <a class="social-btn" href="https://linktr.ee/aathena_eth" target="_blank" rel="noopener">✦ Linktree</a>
+        <a class="social-btn" href="mailto:athenaeth07@gmail.com">✉ Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="footer-logo">ATHENA</div>
+  <div class="footer-copy">© 2025 Athena · Web3 Creator & Narrative Strategist</div>
+</footer>
+
+<script>
+  // LOADER
+  window.addEventListener('load', () => {
+    setTimeout(() => document.getElementById('loader').classList.add('hidden'), 1800);
+  });
+
+  // CURSOR
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.transform = `translate(${mx - 4}px, ${my - 4}px)`;
+  });
+  (function animRing() {
+    rx += (mx - rx - 16) * 0.12;
+    ry += (my - ry - 16) * 0.12;
+    ring.style.transform = `translate(${rx}px, ${ry}px)`;
+    requestAnimationFrame(animRing);
+  })();
+  document.querySelectorAll('a,button,.work-card,.svc-card,.partner-card').forEach(el => {
+    el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+  });
+
+  // PARTICLES
+  const canvas = document.getElementById('particles-canvas');
+  const ctx = canvas.getContext('2d');
+  function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+  class Particle {
+    constructor() { this.reset(); }
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 1.3 + 0.3;
+      this.vx = (Math.random() - 0.5) * 0.22;
+      this.vy = (Math.random() - 0.5) * 0.22;
+      this.op = Math.random() * 0.5 + 0.07;
+      this.col = Math.random() > 0.5 ? '155,93,229' : '0,245,255';
+    }
+    update() {
+      this.x += this.vx; this.y += this.vy;
+      if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+    }
+    draw() {
+      ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${this.col},${this.op})`; ctx.fill();
+    }
+  }
+  const pts = Array.from({length: 65}, () => new Particle());
+  (function anim() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < pts.length; i++) {
+      for (let j = i+1; j < pts.length; j++) {
+        const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
+        const d = Math.sqrt(dx*dx+dy*dy);
+        if (d < 85) {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(155,93,229,${0.055*(1-d/85)})`;
+          ctx.lineWidth = 0.4;
+          ctx.moveTo(pts[i].x, pts[i].y);
+          ctx.lineTo(pts[j].x, pts[j].y);
+          ctx.stroke();
+        }
+      }
+      pts[i].update(); pts[i].draw();
+    }
+    requestAnimationFrame(anim);
+  })();
+
+  // SCROLL REVEAL
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // MOBILE NAV
+  function toggleMenu(btn) {
+    btn.classList.toggle('open');
+    const links = document.querySelector('.nav-links');
+    const open = links.style.display === 'flex';
+    links.style.cssText = open
+      ? 'display:none'
+      : 'display:flex;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:rgba(6,6,16,0.98);padding:24px;gap:18px;border-bottom:1px solid rgba(155,93,229,0.14);z-index:200;backdrop-filter:blur(14px)';
+  }
+</script>
+</body>
+</html>
