@@ -612,6 +612,64 @@
     .partners-grid { grid-template-columns: repeat(2,1fr); }
     .hero-btns { flex-direction: column; }
   }
+/* SPACES SECTION */
+#spaces { background: var(--bg3); }
+.spaces-kpi-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:32px; }
+.spaces-kpi { background:var(--glass); border:1px solid var(--glass-border); padding:20px 18px; position:relative; overflow:hidden; transition:border-color 0.3s,transform 0.3s; }
+.spaces-kpi::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--purple),var(--cyan)); }
+.spaces-kpi:hover { border-color:var(--purple); transform:translateY(-3px); }
+.spaces-kpi-label { font-family:'Space Mono',monospace; font-size:0.58rem; color:var(--text-muted); letter-spacing:0.14em; text-transform:uppercase; margin-bottom:8px; }
+.spaces-kpi-value { font-family:'Orbitron',monospace; font-size:2.2rem; font-weight:900; color:#fff; line-height:1; text-shadow:0 0 20px rgba(155,93,229,0.25); }
+.spaces-kpi-sub { font-size:0.72rem; color:var(--cyan); margin-top:5px; font-weight:600; letter-spacing:0.04em; }
+.spaces-months-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:32px; }
+.spaces-month { background:var(--glass); border:1px solid var(--glass-border); padding:22px 20px; position:relative; overflow:hidden; transition:border-color 0.3s,transform 0.3s; }
+.spaces-month:hover { transform:translateY(-3px); }
+.spaces-month.m-april { border-color:rgba(155,93,229,0.28); }
+.spaces-month.m-april:hover { border-color:var(--purple); }
+.spaces-month.m-may { border-color:rgba(0,245,255,0.22); }
+.spaces-month.m-may:hover { border-color:var(--cyan); }
+.spaces-month.m-june { border-color:rgba(199,125,255,0.22); }
+.spaces-month.m-june:hover { border-color:var(--purple-light); }
+.spaces-month::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; }
+.m-april::before { background:var(--purple); }
+.m-may::before { background:var(--cyan); }
+.m-june::before { background:var(--purple-light); }
+.spaces-month-pill { display:inline-block; font-family:'Orbitron',monospace; font-size:0.6rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; padding:3px 12px; border-radius:20px; margin-bottom:14px; }
+.m-april .spaces-month-pill { background:rgba(155,93,229,0.2); color:var(--purple-light); border:1px solid rgba(155,93,229,0.3); }
+.m-may .spaces-month-pill { background:rgba(0,245,255,0.12); color:var(--cyan); border:1px solid rgba(0,245,255,0.28); }
+.m-june .spaces-month-pill { background:rgba(199,125,255,0.15); color:var(--purple-light); border:1px solid rgba(199,125,255,0.28); }
+.spaces-month-big { font-family:'Orbitron',monospace; font-size:2.8rem; font-weight:900; line-height:1; margin-bottom:2px; }
+.m-april .spaces-month-big { color:var(--purple); text-shadow:0 0 20px rgba(155,93,229,0.4); }
+.m-may .spaces-month-big { color:var(--cyan); text-shadow:0 0 20px rgba(0,245,255,0.3); }
+.m-june .spaces-month-big { color:var(--purple-light); text-shadow:0 0 20px rgba(199,125,255,0.3); }
+.spaces-month-big-label { font-size:0.62rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:14px; }
+.spaces-stat-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:7px; }
+.spaces-stat-key { font-size:0.8rem; color:var(--text-muted); }
+.spaces-stat-val { font-size:0.88rem; font-weight:700; color:var(--text); }
+.spaces-divider { height:1px; background:var(--glass-border); margin:10px 0; }
+.spaces-chart { margin-bottom:32px; }
+.spaces-chart-label { font-family:'Space Mono',monospace; font-size:0.62rem; color:var(--text-muted); letter-spacing:0.14em; text-transform:uppercase; margin-bottom:14px; }
+.spaces-bar-row { display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+.spaces-bar-name { font-size:0.72rem; color:var(--text-muted); width:44px; flex-shrink:0; text-align:right; font-family:'Space Mono',monospace; }
+.spaces-bar-track { flex:1; height:24px; background:rgba(255,255,255,0.04); border-radius:3px; overflow:hidden; }
+.spaces-bar-fill { height:100%; border-radius:3px; display:flex; align-items:center; padding-left:10px; font-size:0.72rem; font-weight:700; white-space:nowrap; font-family:'Rajdhani',sans-serif; }
+.spaces-bar-fill.b-april { background:linear-gradient(90deg,var(--purple-dim),var(--purple)); color:rgba(255,255,255,0.9); }
+.spaces-bar-fill.b-may { background:linear-gradient(90deg,rgba(0,180,200,0.9),var(--cyan)); color:rgba(0,20,30,0.9); }
+.spaces-bar-fill.b-june { background:linear-gradient(90deg,var(--purple),var(--purple-light)); color:rgba(255,255,255,0.9); }
+.spaces-top-card { background:var(--glass); border:1px solid var(--glass-border); padding:20px 24px; position:relative; overflow:hidden; margin-bottom:28px; }
+.spaces-top-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--purple),var(--cyan),var(--purple-light)); }
+.spaces-top-label { font-family:'Space Mono',monospace; font-size:0.58rem; color:var(--text-muted); letter-spacing:0.14em; text-transform:uppercase; margin-bottom:8px; }
+.spaces-top-title { font-size:1rem; font-weight:700; color:#fff; margin-bottom:12px; line-height:1.4; }
+.peak-badge { display:inline-block; background:rgba(155,93,229,0.18); border:1px solid rgba(155,93,229,0.4); color:var(--purple-light); font-size:0.58rem; font-weight:700; padding:2px 10px; border-radius:20px; letter-spacing:0.1em; text-transform:uppercase; margin-left:10px; vertical-align:middle; }
+.spaces-top-stats { display:flex; gap:24px; flex-wrap:wrap; }
+.spaces-top-stat { font-size:0.82rem; color:var(--text-muted); }
+.spaces-top-stat strong { color:var(--cyan); font-weight:700; }
+.spaces-footer { display:flex; align-items:center; justify-content:space-between; padding-top:16px; border-top:1px solid var(--glass-border); }
+.spaces-handle { font-family:'Orbitron',monospace; font-size:0.65rem; color:var(--text-muted); letter-spacing:0.08em; display:flex; align-items:center; gap:8px; }
+.spaces-handle-dot { width:6px; height:6px; background:var(--cyan); border-radius:50%; }
+.spaces-period { font-family:'Space Mono',monospace; font-size:0.58rem; color:var(--text-muted); letter-spacing:0.1em; }
+.spaces-mini-bars { display:flex; align-items:flex-end; gap:3px; height:28px; }
+.smb { border-radius:2px 2px 0 0; width:6px; }
 </style>
 </head>
 <body>
@@ -633,6 +691,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Journey</a></li>
     <li><a href="#work">Work</a></li>
+    <li><a href="#spaces">Spaces</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -882,6 +941,135 @@
 </section>
 
 <!-- PARTNERS -->
+  <!-- SPACES RESULTS -->
+<section id="spaces" aria-label="Twitter Spaces results">
+  <div class="section-wrap">
+    <div class="section-tag">Space Results</div>
+    <h2 class="section-heading">3 Months of <em>Aathena Spaces.</em></h2>
+
+    <!-- KPI Row -->
+    <div class="spaces-kpi-grid reveal">
+      <div class="spaces-kpi">
+        <div class="spaces-kpi-label">Total Spaces</div>
+        <div class="spaces-kpi-value">12</div>
+        <div class="spaces-kpi-sub">Hosted</div>
+      </div>
+      <div class="spaces-kpi">
+        <div class="spaces-kpi-label">Total Tuned In</div>
+        <div class="spaces-kpi-value">1635</div>
+        <div class="spaces-kpi-sub">Across all spaces</div>
+      </div>
+      <div class="spaces-kpi">
+        <div class="spaces-kpi-label">Peak Live</div>
+        <div class="spaces-kpi-value">240</div>
+        <div class="spaces-kpi-sub">Listeners, May 8</div>
+      </div>
+      <div class="spaces-kpi">
+        <div class="spaces-kpi-label">Total Replays</div>
+        <div class="spaces-kpi-value">274</div>
+        <div class="spaces-kpi-sub">Recording views</div>
+      </div>
+    </div>
+
+    <!-- Month Breakdown -->
+    <div class="spaces-months-grid">
+      <div class="spaces-month m-april reveal d1">
+        <div class="spaces-month-pill">April</div>
+        <div class="spaces-month-big">4</div>
+        <div class="spaces-month-big-label">Spaces hosted</div>
+        <div class="spaces-stat-row"><span class="spaces-stat-key">Total tuned in</span><span class="spaces-stat-val">632</span></div>
+        <div class="spaces-stat-row"><span class="spaces-stat-key">Avg live listeners</span><span class="spaces-stat-val">133</span></div>
+        <div class="spaces-divider"></div>
+        <div class="spaces-stat-row"><span class="spaces-stat-key">Recording replays</span><span class="spaces-stat-val">100</span></div>
+        <div class="spaces-stat-row"><span class="spaces-stat-key">Total speakers</span><span class="spaces-stat-val">30</span></div>
+      </div>
+      <div class="spaces-month m-may reveal d2">
+        <div class="spaces-month-pill">May</div>
+        <div class="spaces-month-big">4</div>
+        <div class="spaces-month-big-label">Spaces hosted</div>
+        <div class="spaces-stat-row"><span class="spaces-stat-key">Total tuned in</span><span class="spaces-stat-val">577</span></div>
+        <div class="spaces-stat-row"><span class="spaces-stat-key">Avg live listeners</span><span class="spaces-stat-val">120</span></div>
+        <div class="spaces-divider"></div>
+        <div class="spaces-stat-row"><span class="spaces-stat-key">Recording replays</span><span class="spaces-stat-val">108</span></div>
+        <div class="spaces-stat-row"><span class="spaces-stat-key">Total speakers</span><span class="spaces-stat-val">26</span></div>
+      </div>
+      <div class="spaces-month m-june reveal d3">
+        <div class="spaces-month-pill">June</div>
+        <div class="spaces-month-big">4</div>
+        <div class="spaces-month-big-label">Spaces hosted</div>
+        <div class="spaces-stat-row"><span class="spaces-stat-key">Total tuned in</span><span class="spaces-stat-val">426</span></div>
+        <div class="spaces-stat-row"><span class="spaces-stat-key">Avg live listeners</span><span class="spaces-stat-val">82</span></div>
+        <div class="spaces-divider"></div>
+        <div class="spaces-stat-row"><span class="spaces-stat-key">Recording replays</span><span class="spaces-stat-val">97</span></div>
+        <div class="spaces-stat-row"><span class="spaces-stat-key">Total speakers</span><span class="spaces-stat-val">31</span></div>
+      </div>
+    </div>
+
+    <!-- Bar Chart -->
+    <div class="spaces-chart reveal">
+      <div class="spaces-chart-label">Listeners by Month</div>
+      <div class="spaces-bar-row">
+        <div class="spaces-bar-name">April</div>
+        <div class="spaces-bar-track">
+          <div class="spaces-bar-fill b-april" style="width:97%;">632 listeners</div>
+        </div>
+      </div>
+      <div class="spaces-bar-row">
+        <div class="spaces-bar-name">May</div>
+        <div class="spaces-bar-track">
+          <div class="spaces-bar-fill b-may" style="width:89%;">577 listeners</div>
+        </div>
+      </div>
+      <div class="spaces-bar-row">
+        <div class="spaces-bar-name">June</div>
+        <div class="spaces-bar-track">
+          <div class="spaces-bar-fill b-june" style="width:65%;">426 listeners</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top Space -->
+    <div class="spaces-top-card reveal">
+      <div class="spaces-top-label">Top Performing Space</div>
+      <div class="spaces-top-title">
+        How can small creators improve their content and grow their brand?
+        <span class="peak-badge">Peak Space</span>
+      </div>
+      <div class="spaces-top-stats">
+        <span class="spaces-top-stat"><strong>314</strong> tuned in</span>
+        <span class="spaces-top-stat"><strong>240</strong> live listeners</span>
+        <span class="spaces-top-stat"><strong>86</strong> replays</span>
+        <span class="spaces-top-stat"><strong>16</strong> speakers</span>
+        <span class="spaces-top-stat"><strong>2hr 22min</strong> runtime</span>
+        <span class="spaces-top-stat">May 8, 2026</span>
+      </div>
+    </div>
+
+    <!-- Footer row -->
+    <div class="spaces-footer reveal">
+      <div class="spaces-handle">
+        <div class="spaces-handle-dot"></div>
+        @Aathena_eth
+      </div>
+      <div class="spaces-mini-bars" aria-hidden="true">
+        <div class="smb" style="height:14px;background:rgba(155,93,229,0.45)"></div>
+        <div class="smb" style="height:20px;background:rgba(155,93,229,0.6)"></div>
+        <div class="smb" style="height:10px;background:rgba(155,93,229,0.45)"></div>
+        <div class="smb" style="height:26px;background:var(--purple)"></div>
+        <div class="smb" style="height:22px;background:rgba(0,245,255,0.55)"></div>
+        <div class="smb" style="height:16px;background:rgba(0,245,255,0.4)"></div>
+        <div class="smb" style="height:28px;background:var(--cyan)"></div>
+        <div class="smb" style="height:18px;background:rgba(0,245,255,0.45)"></div>
+        <div class="smb" style="height:10px;background:rgba(199,125,255,0.4)"></div>
+        <div class="smb" style="height:18px;background:rgba(199,125,255,0.55)"></div>
+        <div class="smb" style="height:14px;background:rgba(199,125,255,0.45)"></div>
+        <div class="smb" style="height:8px;background:rgba(199,125,255,0.35)"></div>
+      </div>
+      <div class="spaces-period">APR to JUN 2026</div>
+    </div>
+
+  </div>
+</section>
 <section id="partners" aria-label="Brands worked with">
   <div class="section-wrap">
     <div class="section-tag">Worked With</div>
